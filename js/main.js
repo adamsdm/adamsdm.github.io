@@ -1,26 +1,14 @@
 $(document).ready(function() {
 
-
     var animationTime = 1000;
-
-
-
-
-
     var docHeight = $(document).height();
     var winHeight = $(window).height();
-
-    var welcText = document.getElementById("welcText");
-    var welcImage = document.getElementById("welc-image");
-
-    console.log(welcText);
-
-    var offset = 0;
-
-    var fadeStart = 100;
-    var fadeUntil = 200;
-    var fading = $('.center');
+    var offset = document.documentElement.scrollTop;
+    var fadeStart = 200;
+    var fadeUntil = 400;
     var opacity = 0;
+
+    updateElements();
 
     $("#arrowToSec2").click(function() {
         $('html, body').animate({
@@ -29,28 +17,29 @@ $(document).ready(function() {
     });
 
     $(document).on('scroll', function() {
-
-        //Paralax
         offset = document.documentElement.scrollTop;
-        
-        
-        welcText.style.webkitTransform = 'translate(0px, ' + String(-0.4 * offset) + 'px)';
-        welcImage.style.webkitTransform = 'translate(0px, ' + String(-0.4 * offset) + 'px)';
-        
-
-        // Welcome im+text opacity
-        if (offset <= fadeStart) {
-            opacity = 1;
-        } else if (offset <= fadeUntil) {
-            opacity = 1 - offset / fadeUntil;
-        } else {
-            opacity = 0;
-        }
-        fading.css('opacity', opacity);
-        
-        
-        var pixs = Math.min(offset / 50, 4.0);
-        $("#sec-1 #bg").css({"-webkit-filter": "blur("+pixs+"px)","filter": "blur("+pixs+"px)" }) 
-        
+        updateElements();
     })
+
+    function updateElements(){
+        parallax( $("#welcText"), offset);
+        parallax( $("#welc-image"), offset);
+        oppacity( $('.center'), 0, 400, offset);
+        blur( $("#sec-1 #bg"), offset);
+    }
+
+
+    function blur(element, offset) {
+        var pixs = Math.min(offset / 50, 4.0);
+        element.css({ "-webkit-filter": "blur(" + pixs + "px)", "filter": "blur(" + pixs + "px)" })
+    }
+
+    function oppacity(element, fadeStart, fadeUntil, off) {
+        if (offset <= fadeStart) { opacity = 1; } else if (offset <= fadeUntil) { opacity = 1 - offset / fadeUntil; } else { opacity = 0; }
+        element.css('opacity', opacity);
+    }
+
+    function parallax(element, off) {
+        element.css({ "-webkit-transform": 'translate(0px, ' + String(0.4 * off) + 'px)' })
+    }
 })

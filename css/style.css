@@ -75,6 +75,8 @@
     background-color: rgba(0, 0, 0, 0.8);
     min-height: 100%;
     padding: 3em; }
+  #sec-2 .quote {
+    font-style: italic; }
   #sec-2 i {
     font-size: 60px; }
   #sec-2 a {
@@ -83,18 +85,35 @@
     color: #FC4A1A;
     transition: 0.5s; }
   #sec-2 a:hover {
-    color: #DFDCE3; }
+    color: #DFDCE3;
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+    -webkit-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
   #sec-2 a:link {
     text-decoration: none; }
   #sec-2 p {
     color: #DFDCE3;
     line-height: 1.5em; }
 
+.spacing {
+  height: 60vh; }
+
 #sec-3 {
   height: 100vh;
   text-align: center;
   display: block;
-  position: relative; }
+  position: relative;
+  color: black;
+  text-align: center;
+  line-height: 100%;
+  display: block;
+  position: relative;
+  color: #FC4A1A; }
+  #sec-3 .container {
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 100%;
+    padding: 3em; }
 
 /* KEYFRAMES */
 @keyframes fadein {

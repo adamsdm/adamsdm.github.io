@@ -5,6 +5,7 @@ $sunshine:   #F7B733;
 $clean:      #DFDCE3;
 
 
+
 .center {
     position: absolute;
     -webkit-transform-style: preserve-3d;
@@ -66,6 +67,7 @@ $clean:      #DFDCE3;
     }
     #welcText {
         font-size: 70px;
+
         color: $vermillon;
         margin: 10px;
         -webkit-animation: fadein 1s 0.7s;
@@ -100,6 +102,7 @@ $clean:      #DFDCE3;
 
     text-align: center;
     line-height: 100%;
+
     display: block;
     position: relative;
     color: $vermillon;
@@ -110,7 +113,9 @@ $clean:      #DFDCE3;
         padding: 3em;
     }
 
-
+    .quote{
+        font-style: italic;
+    }
 
     i{
         font-size: 60px;
@@ -125,6 +130,10 @@ $clean:      #DFDCE3;
 
     a:hover{
         color: $clean;
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+        -webkit-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
     }
 
     a:link{
@@ -137,11 +146,30 @@ $clean:      #DFDCE3;
     }
 }
 
+.spacing{
+    height: 60vh;
+}
+
 #sec-3 {
     height: 100vh;
     text-align: center;
     display: block;
     position:relative;
+
+    color:black;
+
+    text-align: center;
+    line-height: 100%;
+
+    display: block;
+    position: relative;
+    color: $vermillon;
+
+    .container {
+        background-color:rgba(0, 0, 0, 0.8);
+        min-height: 100%;
+        padding: 3em;
+    }
 }
 
 /* KEYFRAMES */

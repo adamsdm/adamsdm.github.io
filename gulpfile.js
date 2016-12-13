@@ -20,11 +20,6 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('dist/js'))
 });
 
-gulp.task('libs', function() {
-    gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css',
-              'bower_components/font-awesome/css/font-awesome.min.css'])
-    .pipe(gulp.dest('dist/libs'));
-});
 
  // sass -> css -> minify
 gulp.task('styles', function () {

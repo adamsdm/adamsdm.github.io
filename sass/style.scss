@@ -38,17 +38,31 @@
 
 #sec-1 {
     height: 100vh;
-    background-image: url('http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg');
+    /*background-image: url('http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg');
+    background-image: url('https://static.pexels.com/photos/6548/cold-snow-winter-mountain.jpeg');
+    background-attachment: fixed;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    */
+    
     text-align: center;
     display: block;
+
+
 
     .center{
         /*position: fixed;*/
     }
 
-    img {
+    #bg {
+        position: fixed;
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #welc-image {
         -webkit-animation: fadein 1s;
             -ms-animation: fadein 1s;
                 animation: fadein 1s;

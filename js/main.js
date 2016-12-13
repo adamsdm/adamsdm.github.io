@@ -11,19 +11,25 @@ $(document).ready(function() {
     updateElements();
 
     $("#arrowToSec2").click(function() {
+        console.log($("#arrowToSec2").height());
+
         $('html, body').animate({
             scrollTop: $("#sec-2").offset().top
         }, animationTime);
     });
 
     $(document).on('scroll', function() {
+        if(offset>document.documentElement.scrollTop)
+            console.log("up");
+        else
+            console.log("down");
         offset = document.documentElement.scrollTop;
         updateElements();
     })
 
     function updateElements(){
-        parallax( $("#welcText"), offset, 0.4);
-        parallax( $("#welc-image"), offset, 0.4);
+        parallax( $("#welcText"), offset, -0.4);
+        parallax( $("#welc-image"), offset, -0.4);
         oppacity( $('.center'), 0, 400, offset);
         blur( $("#sec-1 #bg"), offset);
     }

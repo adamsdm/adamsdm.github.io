@@ -1,9 +1,3 @@
-/*
-    FRESH:      #4ABDAC
-    VERMILLION: #FC4A1A
-    SUNSHINE:   #F7B733
-    CLEAN:      #DFDCE3
-*/
 .center {
   position: absolute;
   -webkit-transform-style: preserve-3d;
@@ -31,32 +25,25 @@
 
 #sec-1 {
   height: 100vh;
-  /*background-image: url('http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg');
-    background-image: url('https://static.pexels.com/photos/6548/cold-snow-winter-mountain.jpeg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
   text-align: center;
   display: block; }
-  #sec-1 .center {
-    /*position: fixed;*/ }
   #sec-1 #bg {
     position: fixed;
     object-fit: cover;
     width: 100vw;
     height: 100vh; }
+  #sec-1 h1 {
+    color: #FC4A1A; }
   #sec-1 #welc-image {
     -webkit-animation: fadein 1s;
     -ms-animation: fadein 1s;
     animation: fadein 1s;
     animation-fill-mode: backwards;
-    border: solid #DFDCE3 10px;
+    border: solid #FC4A1A 10px;
     border-radius: 1000px; }
   #sec-1 #welcText {
     font-size: 70px;
-    color: white;
+    color: #FC4A1A;
     margin: 10px;
     -webkit-animation: fadein 1s 0.7s;
     -ms-animation: fadein 1s 0.7s;
@@ -66,7 +53,8 @@
     position: absolute;
     font-size: 50px;
     bottom: 10px;
-    color: white;
+    color: #FC4A1A;
+    z-index: 999;
     -webkit-animation: fadein 1s 2s;
     -ms-animation: fadein 1s 2s;
     animation: fadein 1s 2s;
@@ -77,21 +65,33 @@
     font-size: 60px; }
 
 #sec-2 {
-  height: 100vh;
   color: black;
-  background-color: rgba(150, 150, 150, 0.7);
   text-align: center;
   line-height: 100%;
   display: block;
   position: relative;
-  border-top: 5px solid #DFDCE3; }
+  color: #FC4A1A; }
   #sec-2 .container {
-    background-color: white;
-    min-height: 100%; }
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 100%;
+    padding: 3em; }
+  #sec-2 i {
+    font-size: 60px; }
+  #sec-2 a {
+    margin: 10px;
+    font-size: 30px;
+    color: #FC4A1A;
+    transition: 0.5s; }
+  #sec-2 a:hover {
+    color: #DFDCE3; }
+  #sec-2 a:link {
+    text-decoration: none; }
+  #sec-2 p {
+    color: #DFDCE3;
+    line-height: 1.5em; }
 
 #sec-3 {
   height: 100vh;
-  /*background-color: #f06060;*/
   text-align: center;
   display: block;
   position: relative; }

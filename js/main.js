@@ -46,11 +46,10 @@ $(document).ready(function() {
         } else {
             opacity = 0;
         }
-
         fading.css('opacity', opacity);
         
         
-        var pixs = Math.min(offset / 100, 3.0);
+        var pixs = Math.min(offset / 50, 4.0);
         $("#sec-1 #bg").css({"-webkit-filter": "blur("+pixs+"px)","filter": "blur("+pixs+"px)" }) 
         
     })

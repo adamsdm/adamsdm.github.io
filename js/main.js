@@ -22,16 +22,25 @@ $(document).ready(function() {
     })
 
     function updateElements(){
-        parallax( $("#welcText"), offset);
-        parallax( $("#welc-image"), offset);
+        parallax( $("#welcText"), offset, 0.4);
+        parallax( $("#welc-image"), offset, 0.4);
         oppacity( $('.center'), 0, 400, offset);
         blur( $("#sec-1 #bg"), offset);
     }
 
 
+
+
+
+
     function blur(element, offset) {
         var pixs = Math.min(offset / 50, 4.0);
-        element.css({ "-webkit-filter": "blur(" + pixs + "px)", "filter": "blur(" + pixs + "px)" })
+        element.css({ 
+            "-webkit-filter"    : "blur(" + pixs + "px)", "filter": "blur(" + pixs + "px)",
+            "filter"            : "blur(" + pixs + "px)", "filter": "blur(" + pixs + "px)" 
+ 
+
+        })
     }
 
     function oppacity(element, fadeStart, fadeUntil, off) {
@@ -39,7 +48,12 @@ $(document).ready(function() {
         element.css('opacity', opacity);
     }
 
-    function parallax(element, off) {
-        element.css({ "-webkit-transform": 'translate(0px, ' + String(0.4 * off) + 'px)' })
+    function parallax(element, off, speed) {
+        element.css({ 
+            "-webkit-transform" : 'translate(0px, ' + String(speed * off) + 'px)', 
+            "-ms-transform"     : 'translate(0px, ' + String(speed * off) + 'px)',
+            "transform"         : 'translate(0px, ' + String(speed * off) + 'px)' 
+
+        })
     }
 })

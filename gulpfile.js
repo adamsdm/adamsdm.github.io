@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     connect = require('gulp-connect');
 
-
 gulp.task('connect', function() {
   connect.server({
     port: 8000
@@ -21,6 +20,12 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('dist/js'))
 });
 
+gulp.task('libs', function() {
+    gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css',
+              'bower_components/font-awesome/css/font-awesome.min.css'])
+    .pipe(gulp.dest('dist/libs'));
+});
+
  // sass -> css -> minify
 gulp.task('styles', function () {
   return gulp.src('sass/*.scss')
@@ -30,7 +35,6 @@ gulp.task('styles', function () {
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/css'));
 });
-
 
 // Watch task
 // watches JS

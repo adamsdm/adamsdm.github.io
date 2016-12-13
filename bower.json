@@ -1,0 +1,21 @@
+{
+  "name": "My personal website",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "adamsdm1@gmail.com"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

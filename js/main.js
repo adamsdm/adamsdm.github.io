@@ -11,18 +11,23 @@ $(document).ready(function() {
     updateElements();
 
     $("#arrowToSec2").click(function() {
-        console.log($("#arrowToSec2").height());
+        var el = $("#sec-2 .container");
+        var elOffset = el.offset().top;
+        var elHeight = el.height();
+        var scrollTo;
+
+        if (elHeight < winHeight) {
+            scrollTo = elOffset - ((winHeight / 2) - (elHeight / 2));
+        } else {
+            scrollTo = elOffset;
+        }
 
         $('html, body').animate({
-            scrollTop: $("#sec-2").offset().top
+            scrollTop: scrollTo
         }, animationTime);
     });
 
     $(document).on('scroll', function() {
-        if (offset > document.documentElement.scrollTop)
-            console.log("up");
-        else
-            console.log("down");
         offset = document.documentElement.scrollTop;
         updateElements();
     })

@@ -24,14 +24,14 @@
   transform: translate(-50%, 0); }
 
 #sec-1 {
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   display: block; }
   #sec-1 #bg {
     position: fixed;
     object-fit: cover;
     width: 100vw;
-    height: 100vh; }
+    height: 100%; }
   #sec-1 h1 {
     color: #FC4A1A; }
   #sec-1 #welc-image {
@@ -68,12 +68,14 @@
   color: black;
   text-align: center;
   line-height: 100%;
+  min-height: 100vh;
   display: block;
   position: relative;
   color: #FC4A1A; }
   #sec-2 .container {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
     background-color: rgba(0, 0, 0, 0.8);
-    min-height: 100%;
     padding: 3em; }
   #sec-2 .quote {
     font-style: italic; }
@@ -96,14 +98,12 @@
     color: #DFDCE3;
     line-height: 1.5em; }
 
-.spacing {
-  height: 60vh; }
-
 #sec-3 {
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   display: block;
   position: relative;
+  margin-top: 30vh;
   color: black;
   text-align: center;
   line-height: 100%;

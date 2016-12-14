@@ -38,7 +38,7 @@ $clean:      #DFDCE3;
 
 
 #sec-1 {
-    height: 100vh;
+    min-height: 100vh;
     
     text-align: center;
     display: block;
@@ -48,7 +48,7 @@ $clean:      #DFDCE3;
         position: fixed;
         object-fit: cover;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
     }
 
     h1{
@@ -102,14 +102,16 @@ $clean:      #DFDCE3;
 
     text-align: center;
     line-height: 100%;
+    min-height: 100vh;
 
     display: block;
     position: relative;
     color: $vermillon;
 
     .container {
+        margin-top: 30vh;
+        margin-bottom: 30vh;
         background-color:rgba(0, 0, 0, 0.8);
-        min-height: 100%;
         padding: 3em;
     }
 
@@ -146,15 +148,14 @@ $clean:      #DFDCE3;
     }
 }
 
-.spacing{
-    height: 60vh;
-}
 
 #sec-3 {
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     display: block;
     position:relative;
+
+    margin-top: 30vh;
 
     color:black;
 

@@ -30,6 +30,22 @@ $(document).ready(function() {
     $(document).on('scroll', function() {
         offset = document.documentElement.scrollTop;
         updateElements();
+
+        var mountains = $('#mountains-sec-3');
+        var pStart = mountains.offset().top+mountains.height()-winHeight;
+
+        if(offset >= pStart){
+            var newOff = offset-pStart;     
+        } else {
+            newOff = 0;
+        }
+
+        $('#bg').css({
+                "-webkit-transform": 'translate(0px, ' + String(-0.4 * newOff) + 'px)',
+                    "-ms-transform": 'translate(0px, ' + String(-0.4 * newOff) + 'px)',
+                        "transform": 'translate(-50%, ' + String(-0.4 * newOff) + 'px)'
+            })
+
     })
 
     function updateElements() {

@@ -108,13 +108,10 @@ body {
   background-image: url("/img/forest.png");
   background-position: bottom center;
   background-repeat: repeat-x;
-  height: 600px; }
-  @media (min-width: 0px) {
-    #mountains-sec-3 {
-      background-size: 576px; } }
-  @media (min-width: 576px) {
-    #mountains-sec-3 {
-      background-size: 576px; } }
+  height: 600px;
+  /* Mobile first */
+  background-size: 576px;
+  /* Desktop */ }
   @media (min-width: 768px) {
     #mountains-sec-3 {
       background-size: 768px; } }

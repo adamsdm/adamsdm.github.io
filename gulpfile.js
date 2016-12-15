@@ -72,5 +72,6 @@ gulp.task('watch', function(){
     gulp.watch('sass/*.scss', ['styles']); 
 })
 
-gulp.task('build', ['scripts', 'styles', 'libs']);
-gulp.task('default', ['scripts', 'styles', 'libs','connect', 'watch']);
+gulp.task('dist', ['scripts', 'styles', 'libs']);          // dist build
+gulp.task('prod', ['dist','connect', 'watch']);         // prod build
+gulp.task('default', ['prod']);

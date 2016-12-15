@@ -28,7 +28,8 @@ $(document).ready(function() {
     });
 
     $(document).on('scroll', function() {
-        offset = document.documentElement.scrollTop;
+        offset = $(document).scrollTop();
+        console.log($(document).scrollTop());
         updateElements();
 
         var mountains = $('#mountains-sec-3');

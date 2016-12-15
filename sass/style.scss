@@ -1,84 +1,70 @@
-
-$fresh:      #4ABDAC;
-$vermillon:  #FC4A1A;
-$sunshine:   #F7B733;
-$clean:      #DFDCE3;
-
-
-body{
+$fresh: #4ABDAC;
+$vermillon: #FC4A1A;
+$sunshine: #F7B733;
+$clean: #DFDCE3;
+$forest: #211e1e;
+body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .center {
     position: absolute;
     -webkit-transform-style: preserve-3d;
-         -o-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-         -o-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .vert-center {
     position: absolute;
     -webkit-transform-style: preserve-3d;
-         -o-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     left: 50%;
-   
     -webkit-transform: translate(-50%, 0);
-         -o-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }
+
 #bg {
     position: fixed;
+    z-index: -9999;
     object-fit: cover;
     -o-object-fit: cover;
     width: 100vw;
     height: 100%;
-
 }
 
 #sec-1 {
     min-height: 100vh;
-    
     text-align: center;
     display: block;
-
-
-
-
-    h1{
+    h1 {
         color: $vermillon;
     }
-
     #welc-image {
         -webkit-animation: fadein 1s;
-            -ms-animation: fadein 1s;
-                animation: fadein 1s;
-
+        -ms-animation: fadein 1s;
+        animation: fadein 1s;
         animation-fill-mode: backwards;
-
         border: solid $vermillon 10px;
         border-radius: 100%;
     }
     #welcText {
         font-size: 70px;
-
         color: $vermillon;
         margin: 10px;
         -webkit-animation: fadein 1s 0.7s;
-            -ms-animation: fadein 1s 0.7s;
-                animation: fadein 1s 0.7s;
-
+        -ms-animation: fadein 1s 0.7s;
+        animation: fadein 1s 0.7s;
         animation-fill-mode: backwards;
     }
     #arrowToSec2 {
@@ -87,95 +73,100 @@ body{
         bottom: 10px;
         color: $vermillon;
         z-index: 999;
-
         -webkit-animation: fadein 1s 2s;
-            -ms-animation: fadein 1s 2s;
-                animation: fadein 1s 2s;
+        -ms-animation: fadein 1s 2s;
+        animation: fadein 1s 2s;
         transition: 0.3s;
         animation-fill-mode: backwards;
-
         text-decoration: none;
-
     }
-    #arrowToSec2:hover{
+    #arrowToSec2:hover {
         font-size: 60px;
     }
 }
 
 #sec-2 {
-    color:black;
-
+    color: black;
     text-align: center;
     line-height: 100%;
     min-height: 100vh;
     padding-top: 30vh;
-
     display: block;
     position: relative;
     color: $vermillon;
-
     .container {
-        background-color:rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.8);
         padding: 3em;
     }
-
-    .quote{
+    .quote {
         font-style: italic;
     }
-
-    i{
+    i {
         font-size: 60px;
     }
-
-    a{
-        margin:10px;
+    a {
+        margin: 10px;
         font-size: 30px;
         color: $vermillon;
         transition: 0.5s;
     }
-
-    a:hover{
+    a:hover {
         color: $clean;
-          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
         -webkit-transform: scale(1.2, 1.2);
-  -ms-transform: scale(1.2, 1.2);
-  transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
     }
-
-    a:link{
+    a:link {
         text-decoration: none;
     }
-
-    p{
+    p {
         color: $clean;
         line-height: 1.5em;
     }
 }
 
+#mountains-sec-3 {
+    z-index: 2;
+    background-image: url("/img/forest.png");
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    height: 600px;
+
+    /* Mobile first */
+    background-size: 576px
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        background-size: 768px;
+    }
+    @media (min-width: 992px) {
+        background-size: 992px;
+    }
+    @media (min-width: 1200px) {
+        background-size: auto;
+    }
+}
 
 #sec-3 {
     min-height: 100vh;
     text-align: center;
     display: block;
-    position:relative;
-
-    margin-top: 30vh;
-
-    color:black;
-
+    position: relative;
+    background-color: $forest;
+    color: black;
     text-align: center;
     line-height: 100%;
-
     display: block;
     position: relative;
     color: $vermillon;
-
     .container {
-        background-color:rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.8);
         min-height: 100%;
         padding: 3em;
     }
 }
+
 
 /* KEYFRAMES */
 

@@ -28,6 +28,7 @@ body {
 
 #bg {
   position: fixed;
+  z-index: -9999;
   object-fit: cover;
   -o-object-fit: cover;
   width: 100vw;
@@ -102,12 +103,34 @@ body {
     color: #DFDCE3;
     line-height: 1.5em; }
 
+#mountains-sec-3 {
+  z-index: 2;
+  background-image: url("/img/forest.png");
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  height: 600px; }
+  @media (min-width: 0px) {
+    #mountains-sec-3 {
+      background-size: 576px; } }
+  @media (min-width: 576px) {
+    #mountains-sec-3 {
+      background-size: 576px; } }
+  @media (min-width: 768px) {
+    #mountains-sec-3 {
+      background-size: 768px; } }
+  @media (min-width: 992px) {
+    #mountains-sec-3 {
+      background-size: 992px; } }
+  @media (min-width: 1200px) {
+    #mountains-sec-3 {
+      background-size: auto; } }
+
 #sec-3 {
   min-height: 100vh;
   text-align: center;
   display: block;
   position: relative;
-  margin-top: 30vh;
+  background-color: #211e1e;
   color: black;
   text-align: center;
   line-height: 100%;

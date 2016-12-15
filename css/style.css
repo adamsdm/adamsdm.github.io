@@ -26,15 +26,17 @@ body {
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0); }
 
+#bg {
+  position: fixed;
+  object-fit: cover;
+  -o-object-fit: cover;
+  width: 100vw;
+  height: 100%; }
+
 #sec-1 {
   min-height: 100vh;
   text-align: center;
   display: block; }
-  #sec-1 #bg {
-    position: fixed;
-    object-fit: cover;
-    width: 100vw;
-    height: 100%; }
   #sec-1 h1 {
     color: #FC4A1A; }
   #sec-1 #welc-image {
@@ -43,7 +45,7 @@ body {
     animation: fadein 1s;
     animation-fill-mode: backwards;
     border: solid #FC4A1A 10px;
-    border-radius: 1000px; }
+    border-radius: 100%; }
   #sec-1 #welcText {
     font-size: 70px;
     color: #FC4A1A;
@@ -72,12 +74,11 @@ body {
   text-align: center;
   line-height: 100%;
   min-height: 100vh;
+  padding-top: 30vh;
   display: block;
   position: relative;
   color: #FC4A1A; }
   #sec-2 .container {
-    margin-top: 30vh;
-    margin-bottom: 30vh;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 3em; }
   #sec-2 .quote {

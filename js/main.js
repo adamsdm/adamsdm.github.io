@@ -17,7 +17,7 @@ $(document).ready(function() {
         var scrollTo;
 
         if (elHeight < winHeight) {
-            scrollTo = elOffset - ((winHeight / 2) - (elHeight / 2));
+            scrollTo = $("#sec-2").offset().top;
         } else {
             scrollTo = elOffset;
         }
@@ -36,7 +36,7 @@ $(document).ready(function() {
         parallax($("#welcText"), offset, -0.4);
         parallax($("#welc-image"), offset, -0.4);
         oppacity($('.center'), 0, 400, offset);
-        blur($("#sec-1 #bg"), offset);
+        blur($("#bg"), offset);
     }
 
 

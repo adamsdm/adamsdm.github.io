@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),
     connect = require('gulp-connect'),
+    filter = require('gulp-filter'),
     mainBowerFiles = require('main-bower-files');
 
 
@@ -65,6 +66,41 @@ gulp.task('libs', function(){
 
 });
 
+gulp.task('libs2', function(){
+
+    /* FONT AWESOME */
+    // Copy font-awesome fonts
+    gulp.src('bower_components/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('./dist/libs/fonts'));
+    // Compile sass
+    gulp.src('bower_components/font-awesome/scss/font-awesome.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist/libs/css'));
+
+
+    /* ALL OTHER */
+    var jsFilt = filter('**/*.js');
+    var cssFilt = filter('**/*.css');
+    var scssFilt = filter('**/*.scss');
+    
+    var all = gulp.src(mainBowerFiles());
+
+        // JS
+        all.pipe(jsFilt)
+            .pipe(gulp.dest('./dist/libs/js'));
+
+        // CSS
+        all.pipe(cssFilt)
+            .pipe(gulp.dest('./dist/libs/css'));
+
+        // SCSS
+        all.pipe(scssFilt)
+            .pipe(sass().on('error', sass.logError))
+            .pipe(gulp.dest('./dist/libs/css'));
+
+});
+
+
 // Watch task
 // watches JS
 gulp.task('watch', function(){
@@ -72,6 +108,6 @@ gulp.task('watch', function(){
     gulp.watch('sass/*.scss', ['styles']); 
 })
 
-gulp.task('dist', ['scripts', 'styles', 'libs']);          // dist build
+gulp.task('dist', ['scripts', 'styles', 'libs2']);          // dist build
 gulp.task('prod', ['dist','connect', 'watch']);         // prod build
 gulp.task('default', ['prod']);

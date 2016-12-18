@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     connect = require('gulp-connect'),
     filter = require('gulp-filter'),
+    concat = require('gulp-concat'),
     mainBowerFiles = require('main-bower-files');
 
 
@@ -36,35 +37,6 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('libs', function(){
-
-    /* FONT AWESOME */
-    // Copy font-awesome fonts
-    gulp.src('bower_components/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('./dist/libs/font-awesome/fonts'));
-    // Compile sass
-    gulp.src('bower_components/font-awesome/scss/font-awesome.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist/libs/font-awesome/css'));
-
-    /* BOOTSTRAP */
-    // Compile sass
-    gulp.src('bower_components/bootstrap/scss/bootstrap.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist/libs/bootstrap/css'));
-    // Copy js
-    gulp.src('bower_components/bootstrap/dist/js/bootstrap.min.js')
-        .pipe(gulp.dest('./dist/libs/bootstrap/js'));
-
-    /* JQUERY */
-    gulp.src('bower_components/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('./dist/libs/jquery'));
-
-    /* TETHER */
-    gulp.src('bower_components/tether/dist/js/tether.min.js')
-        .pipe(gulp.dest('./dist/libs/tether'));
-
-});
 
 gulp.task('libs2', function(){
 
@@ -87,8 +59,7 @@ gulp.task('libs2', function(){
 
         // JS
         all.pipe(jsFilt)
-            .pipe(gulp.dest('./dist/libs/js'));
-
+            .pipe(gulp.dest('./dist/libs/js'))
         // CSS
         all.pipe(cssFilt)
             .pipe(gulp.dest('./dist/libs/css'));

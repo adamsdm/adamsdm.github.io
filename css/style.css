@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif !important; }
 
 .center {
   position: absolute;
@@ -39,17 +39,17 @@ body {
   text-align: center;
   display: block; }
   #sec-1 h1 {
-    color: #FC4A1A; }
+    color: #DE471F; }
   #sec-1 #welc-image {
     -webkit-animation: fadein 1s;
     -ms-animation: fadein 1s;
     animation: fadein 1s;
     animation-fill-mode: backwards;
-    border: solid #FC4A1A 10px;
+    border: solid #DE471F 10px;
     border-radius: 100%; }
   #sec-1 #welcText {
     font-size: 70px;
-    color: #FC4A1A;
+    color: #DE471F;
     margin: 10px;
     -webkit-animation: fadein 1s 0.7s;
     -ms-animation: fadein 1s 0.7s;
@@ -59,7 +59,7 @@ body {
     position: absolute;
     font-size: 50px;
     bottom: 10px;
-    color: #FC4A1A;
+    color: #DE471F;
     z-index: 999;
     -webkit-animation: fadein 1s 2s;
     -ms-animation: fadein 1s 2s;
@@ -78,7 +78,7 @@ body {
   padding-top: 30vh;
   display: block;
   position: relative;
-  color: #FC4A1A; }
+  color: #DE471F; }
   #sec-2 .container {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 3em; }
@@ -89,7 +89,7 @@ body {
   #sec-2 a {
     margin: 10px;
     font-size: 30px;
-    color: #FC4A1A;
+    color: #DE471F;
     transition: 0.5s; }
   #sec-2 a:hover {
     color: #DFDCE3;
@@ -105,7 +105,7 @@ body {
 
 #mountains-sec-3 {
   z-index: 2;
-  background-image: url("/img/forest.png");
+  background-image: url("/dist/img/forest.png");
   background-position: bottom center;
   background-repeat: repeat-x;
   height: 600px;
@@ -133,11 +133,26 @@ body {
   line-height: 100%;
   display: block;
   position: relative;
-  color: #FC4A1A; }
+  color: #DE471F; }
   #sec-3 .container {
-    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     min-height: 100%;
     padding: 3em; }
+  #sec-3 img {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear; }
+  #sec-3 img:hover {
+    border-radius: 100%; }
+  #sec-3 .row {
+    margin-top: 100px;
+    text-align: center; }
+    #sec-3 .row h2, #sec-3 .row p {
+      text-align: left; }
+    #sec-3 .row p {
+      color: #DFDCE3; }
 
 /* KEYFRAMES */
 @keyframes fadein {

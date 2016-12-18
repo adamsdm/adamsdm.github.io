@@ -1,10 +1,11 @@
 $fresh: #4ABDAC;
-$vermillon: #FC4A1A;
+//$vermillon: #FC4A1A;
+$vermillon: #DE471F;
 $sunshine: #F7B733;
 $clean: #DFDCE3;
 $forest: #211e1e;
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif !important;
 }
 
 .center {
@@ -128,7 +129,7 @@ body {
 
 #mountains-sec-3 {
     z-index: 2;
-    background-image: url("/img/forest.png");
+    background-image: url("/dist/img/forest.png");
     background-position: bottom center;
     background-repeat: repeat-x;
     height: 600px;
@@ -161,10 +162,43 @@ body {
     position: relative;
     color: $vermillon;
     .container {
-        background-color: rgba(0, 0, 0, 0.8);
+        border-top: 1px solid rgba(255,255,255,0.2);
         min-height: 100%;
         padding: 3em;
     }
+
+    img{    //Only applies if img is in a <a>
+                  -webkit-transition: all 0.5s linear;
+                     -moz-transition: all 0.5s linear;
+                       -o-transition: all 0.5s linear;
+                      -ms-transition: all 0.5s linear;
+                          transition: all 0.5s linear;
+            }
+    img:hover{
+        border-radius: 100%;
+    }
+
+    .row{
+        margin-top: 100px;
+        text-align: center;
+
+        h2, p{
+            text-align: left;
+        }
+
+        p{
+            color: $clean;
+        }
+    }
+}
+
+
+.morph {
+
+}
+ 
+.morph:hover {
+
 }
 
 

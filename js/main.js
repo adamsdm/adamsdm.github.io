@@ -64,11 +64,7 @@ $(document).ready(function() {
         var pixs = Math.min(offset / 50, 4.0);
         element.css({
             "-webkit-filter": "blur(" + pixs + "px)",
-            "filter": "blur(" + pixs + "px)",
-            "filter": "blur(" + pixs + "px)",
             "filter": "blur(" + pixs + "px)"
-
-
         })
     }
 

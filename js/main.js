@@ -10,11 +10,16 @@ $(document).ready(function() {
 
     updateElements();
 
+    if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('#info-panel').addClass('animated');
+    }
+
     $("#arrowToSec2").click(function() {
         var el = $("#sec-2 .container");
         var elOffset = el.offset().top;
         var elHeight = el.height();
         var scrollTo;
+
 
         if (elHeight < winHeight) {
             scrollTo = $("#sec-2").offset().top;
@@ -41,10 +46,16 @@ $(document).ready(function() {
         }
 
         $('#bg').css({
-                "-webkit-transform": 'translate(0px, ' + String(-0.4 * newOff) + 'px)',
-                    "-ms-transform": 'translate(0px, ' + String(-0.4 * newOff) + 'px)',
+                "-webkit-transform": 'translate(-50%, ' + String(-0.4 * newOff) + 'px)',
+                    "-ms-transform": 'translate(-50%, ' + String(-0.4 * newOff) + 'px)',
                         "transform": 'translate(-50%, ' + String(-0.4 * newOff) + 'px)'
-            })
+        })
+
+        if( isScrolledIntoView( $('#info-panel') ) ){
+            $('#info-panel').addClass('fadeInUp');
+        }
+
+
 
     })
 
@@ -53,8 +64,11 @@ $(document).ready(function() {
         parallax($("#welc-image"), offset, -0.4);
         oppacity($('.center'), 0, 400, offset);
         blur($("#bg"), offset);
-    }
 
+        if( isScrolledIntoView( $('#info-panel') ) ){
+            $('#info-panel').addClass('fadeInUp');
+        }
+    }
 
 
 
@@ -87,4 +101,15 @@ $(document).ready(function() {
 
         })
     }
+
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
 })

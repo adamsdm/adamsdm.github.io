@@ -1,6 +1,6 @@
 $fresh: #4ABDAC;
-//$vermillon: #FC4A1A;
 $vermillon: #DE471F;
+$vermillon-dark: #862c13;
 $sunshine: #F7B733;
 $clean: #DFDCE3;
 $forest: #211e1e;
@@ -120,7 +120,9 @@ body {
     .container {
         background-color: rgba(0, 0, 0, 0.8);
         padding: 3em;
+        transition: 1s;
     }
+
     .quote {
         font-style: italic;
     }
@@ -211,20 +213,95 @@ body {
         p{
             color: $clean;
         }
+
+        a{
+            color: $vermillon;
+            transition: 0.5s;
+        }
+        a:hover{
+            text-decoration: none;
+            color: $vermillon-dark;
+        }
     }
 }
 
 
-.morph {
 
-}
- 
-.morph:hover {
 
-}
 
 
 /* KEYFRAMES */
+
+.animated {
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s;
+    opacity:0;
+}
+.animated.hinge {
+    -webkit-animation-duration:2s;
+    -moz-animation-duration:2s;
+    -ms-animation-duration:2s;
+    -o-animation-duration:2s;
+    animation-duration:2s;
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+@-moz-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+    }
+}
+@-o-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+
+
+
 
 @keyframes fadein {
     from {
